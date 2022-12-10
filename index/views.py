@@ -6,4 +6,8 @@ def index(request):
 
 
 def projects(request):
-    return HttpResponse('Project list')
+    return render(request, 'index/projects.html')
+
+
+def nameless(request):
+    return render(request, 'index/nameless.html')
