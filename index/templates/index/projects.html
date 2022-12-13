@@ -7,13 +7,13 @@
   <div class="row justify-content-md-center gy-3 ">
     {% for project in all_project %}
     <div class="col-sm-3">
-   <div class="card">
-     <div class="card-body">
+   <div class="card ">
+     <div class="card-body ">
        <h6>{{ project.created_at|date:'M d Y' }}</h6>
-       <img src="{{ project.image.url }}" class="img-fluid" >
-       <h5 class="card-title">{{ project.title }}</h5>
+       <img src="{{ project.image.url }}" class="" alt="Responsive image" width="240" height="240" >
+       <h5 class="card-title">{{ project.title|truncatechars:20 }}</h5>
        <p class="card-text">{{ project.description|truncatechars:100 }}</p>
-       <a href="detail" class="btn btn-primary">Подробнее</a>
+       <a href="{% url 'post' project.pk %}" class="btn btn-primary d-flex justify-content-center">Подробнее</a>
      </div>
    </div>
  </div>

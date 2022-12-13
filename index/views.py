@@ -15,5 +15,7 @@ def projects(request):
 def nameless(request):
     return render(request, 'index/nameless.html')
 
-def detail(request, id=0):
-    return render(request, 'index/detail.html', {'id':id})
+
+def detail(request, post_id):
+    project = Projects.objects.get(pk=post_id)
+    return render(request, 'index/detail.html', {'id': post_id, 'project': project})

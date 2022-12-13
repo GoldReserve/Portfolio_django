@@ -24,7 +24,7 @@ urlpatterns = [
     path('', index),
     path('projects', projects),
     path('nameless', nameless),
-    path('detail', detail, name='id'),
+    path('detail/<int:post_id>', detail, name='post'),
 
 ]
 

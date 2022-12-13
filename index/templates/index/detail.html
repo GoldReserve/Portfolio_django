@@ -1,2 +1,15 @@
 {% extends 'index/base.html' %}
 {% load static %}
+
+{% block content %}
+
+        <div class="row justify-content-md-center"></div>
+       <h6 class="text-center">{{ project.created_at|date:'M d Y' }}</h6>
+        <h5 class="card-title text-center">{{ project.title }}</h5>
+       <img src="{{ project.image.url }}" class="rounded mx-auto d-block" width="640" height="700" >
+       <p class="text-center" >{{ project.description}}</p>
+       <div class="d-flex justify-content-center">
+       <a href="/projects" class="btn btn-primary d-flex justify-content-center">Назад</a>
+        </div>
+
+{% endblock %}
